@@ -1,0 +1,23 @@
+{
+  "name": "twitch-tv-api-app",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4"
+  },
+  "devDependencies": {
+    "react-redux": "^5.0.5",
+    "react-router-redux": "^5.0.0-alpha.6",
+    "react-scripts": "1.0.2",
+    "redux": "^3.6.0",
+    "redux-devtools-extension": "^2.13.2",
+    "redux-saga": "^0.15.3"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}
