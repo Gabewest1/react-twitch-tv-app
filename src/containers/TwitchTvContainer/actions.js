@@ -1,6 +1,13 @@
-import { FETCH_USERS } from "./constants"
+import { 
+    FETCH_USER_DATA,
+    FETCH_USER_STREAM_DATA 
+} from "./constants"
 
-export function fetchUsers() {
-    return { type: FETCH_USERS }
+export function fetchUserData(username) {
+    return { type: FETCH_USER_DATA, username }
+}
+
+export function fetchUserStreamData(username) {
+    return { type: FETCH_USER_STREAM_DATA, username }
 }
 

@@ -7,16 +7,19 @@ import * as actions from "./actions"
 
 class TwitchTvContainer extends React.Component {
     componentDidMount() {
-        this.props.fetchUsers()
+        let twitchUsers = ["ESL_SC2", "OgamingSC2", "cretetion", "freecodecamp", "storbeck", "habathcx", "RobotCaleb", "noobs2ninjas"]
+
+        twitchUsers.forEach(user => {
+            this.props.fetchUserData(user)
+            this.props.fetchUserStreamData(user)
+        })
     }
     createTwitchUserStatus() {
         let { data } = this.props
         if(data) {
-            let userStatuses = data.map((user, key) => (
-                <TwitchUserStatus key={key}>This is the twitch container</TwitchUserStatus>
+            return data.map((user, key) => (
+                <TwitchUserStatus {...data.get(key).toJS()} key={key} />
             ))
-
-            return userStatuses
         } else {
             return null
         }
