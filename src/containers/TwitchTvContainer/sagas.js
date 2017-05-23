@@ -5,12 +5,15 @@ import {
     FETCH_USERS_ERROR
 } from "./constants"
 
+//api key used for twitchTV api calls
+const clientID = "drrtl64iwxyebivu4afs782bf7numf"
+
 export function* watchFetchUsers() {
     yield takeEvery(FETCH_USERS, fetchUsers)
 }
 
 export function* fetchUsers(action) {
-    let endpoint = "https://api.twitch.tv/kraken/streams/noobs2ninjas?client_id=drrtl64iwxyebivu4afs782bf7numf"
+    let endpoint = `https://api.twitch.tv/kraken/streams/OgamingSC2?client_id=${clientID}`
     try {
             let response = yield call(fetch, endpoint)
             console.log("response: ", response)
