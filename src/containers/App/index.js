@@ -1,9 +1,10 @@
 import React from "react"
+import TwitchTvContainer from "../TwitchTvContainer"
 
 export default class App extends React.Component {
     render() {
         return (
-            <div>Hello World</div>
+            <TwitchTvContainer />
         )
     }
 }

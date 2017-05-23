@@ -1,7 +1,7 @@
-//Import your reducers and add them to the rootReducer
+import twitchTv from "./containers/TwitchTvContainer/reducer"
 
 const rootReducer = {
-    
+    twitchTv
 }
 
 export default rootReducer
