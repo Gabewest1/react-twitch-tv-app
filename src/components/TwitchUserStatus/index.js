@@ -8,7 +8,6 @@ let TwitchUserStatus = styled.div`
     background-size: 100% 100%;
     border: solid 2px ${secondary}
     color: ${complementary1};
-    font-size: 5vw;
     font-family: helvetica;
     height: 300px;
     width: 500px;
