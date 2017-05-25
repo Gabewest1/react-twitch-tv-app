@@ -1,10 +1,15 @@
 import React from "react"
 import { Field, reduxForm, SubmissionError } from "redux-form/immutable"
+import { primary } from "../../theme/colors"
 
 import styled from "styled-components"
 
 const Container = styled.div`
     display: flex;
+    align-items: center;
+    height: 120px;
+    background-color: ${primary};
+    margin-bottom: 2.5em;
 `
 const Button = styled.button`
     width: 80%;
@@ -35,4 +40,6 @@ class Navbar extends React.Component {
     }
 }
 
-export default Navbar
+export default reduxForm(
+
+)(Navbar)
