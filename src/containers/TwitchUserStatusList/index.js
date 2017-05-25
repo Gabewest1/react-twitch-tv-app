@@ -2,6 +2,7 @@ import React from "react"
 
 import TwitchTvContainer from "../TwitchTvContainer"
 import TwitchUserStatus from "../../components/TwitchUserStatus"
+import Container from "./Container"
 
 class TwitchUserStatusList extends React.Component {
     componentDidMount() {
@@ -24,9 +25,9 @@ class TwitchUserStatusList extends React.Component {
     }
     render() {
         return (
-            <div>
+            <Container>
                 {this.createTwitchUserStatus()}
-            </div>
+            </Container>
         )
     }
 }
