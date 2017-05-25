@@ -13,10 +13,6 @@ const clientID = "drrtl64iwxyebivu4afs782bf7numf"
 
 export const fetchUserData = createLogic({
     type: FETCH_USER_DATA,
-    // processOptions: {
-    //     successType: FETCH_USER_DATA_SUCCESS,
-    //     failType: FETCH_USER_DATA_ERROR
-    // },
     process: async function process({getState, action}, dispatch, done) {
         let { username } = action
         let endpoint = `https://api.twitch.tv/kraken/users/${username}?client_id=${clientID}`
@@ -40,10 +36,6 @@ export const fetchUserData = createLogic({
 
 export const fetchStreamData = createLogic({
     type: FETCH_USER_STREAM_DATA,
-    // processOptions: {
-    //     successType: FETCH_USER_STREAM_DATA_SUCCESS,
-    //     failType: FETCH_USER_STREAM_DATA_ERROR
-    // },
     process: async function process({getState, action}, dispatch, done) {
         let { username } = action
         let endpoint = `https://api.twitch.tv/kraken/streams/${username}?client_id=${clientID}`
