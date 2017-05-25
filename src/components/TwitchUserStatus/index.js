@@ -9,21 +9,21 @@ let TwitchUserStatus = styled.div`
     border: solid 2px ${secondary}
     color: ${complementary1};
     font-family: helvetica;
-    height: 300px;
-    width: 500px;
     margin: 0 auto;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     position: relative;
-
+    width: 250px;
 `
-let UserLogo = styled.div`
-    align-self: flex-start;  
+let UserLogo = styled.div`  
 
 `
 let Logo = styled.img`
     max-width: 100%;
+    border-radius: 50%;
+    width: 200px;
 `
 let UserInfo = styled.div`
     text-align: center;  

@@ -5,6 +5,12 @@ import { bindActionCreators } from "redux"
 import TwitchUserStatus from "../../components/TwitchUserStatus"
 import * as actions from "./actions"
 
+import styled from "styled-components"
+const Container = styled.div`
+    display: flex;
+    flex-wrap: wrap;
+`
+
 class TwitchTvContainer extends React.Component {
     componentDidMount() {
         let twitchUsers = ["ESL_SC2", "OgamingSC2", "cretetion", "freecodecamp", "storbeck", "habathcx", "RobotCaleb", "noobs2ninjas"]
@@ -26,9 +32,9 @@ class TwitchTvContainer extends React.Component {
     }
     render() {
         return (
-            <div>
+            <Container>
                 {this.createTwitchUserStatus()}
-            </div>
+            </Container>
         )
     }
 }
