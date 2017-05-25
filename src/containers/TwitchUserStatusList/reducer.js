@@ -11,7 +11,7 @@ let initialState = fromJS({
     showOfflineUsers: true,
 })
 
-export default twitchUserStatusList(state = initialState, action) {
+export default function twitchUserStatusList(state = initialState, action) {
     switch(action.type) {
         case SHOW_ONLINE_USERS:
             return state.set("showOnlineUsers", true)

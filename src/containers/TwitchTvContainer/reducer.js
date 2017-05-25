@@ -37,7 +37,3 @@ export default function twitchTv(state = initialState, action) {
             return state
     }
 }
-
-function updateUserData(data, action) {
-
-}

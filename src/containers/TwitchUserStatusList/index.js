@@ -10,7 +10,6 @@ class TwitchUserStatusList extends React.Component {
 
         twitchUsers.forEach(user => {
             this.props.fetchUserData(user)
-            this.props.fetchUserStreamData(user)
         })
     }
     createTwitchUserStatus() {
