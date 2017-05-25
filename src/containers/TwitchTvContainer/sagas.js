@@ -23,10 +23,10 @@ export function* fetchUserData(action) {
     let endpoint = `https://api.twitch.tv/kraken/users/${username}?client_id=${clientID}`
     try {
             let response = yield call(fetch, endpoint)
-            console.log("response: ", response)
+            // console.log("response: ", response)
             let data = yield response.json()
             let { display_name, bio, logo, _links: { self } } = data
-            console.log("data: ", data)
+            // console.log("data: ", data)
             let user = { username: display_name, profileUrl: self, bio, logo }
             yield put({ type: FETCH_USER_DATA_SUCCESS, user })
         } catch(e) {
@@ -40,9 +40,9 @@ export function* fetchUserStreamData(action) {
     let endpoint = `https://api.twitch.tv/kraken/streams/${username}?client_id=${clientID}`
     try {
             let response = yield call(fetch, endpoint)
-            console.log("response: ", response)
+            // console.log("response: ", response)
             let data = yield response.json()
-            console.log("data: ", data)
+            // console.log("data: ", data)
             let stream = {game: data.stream.game, viewers: data.stream.viewers}
             yield put({ type: FETCH_USER_STREAM_DATA_SUCCESS, stream })
         } catch(e) {
