@@ -56,7 +56,7 @@ export default (props) => {
                     <Logo src={logo} alt={username + " logo"} />
                 </UserLogo>
                 <UserInfo>
-                    <h1>{username}</h1>
+                    <h3>{username}</h3>
                     <p>Currently offline</p>
                 </UserInfo>
             </TwitchUserStatus>
