@@ -1,6 +1,9 @@
 import React from "react"
+import { connect } from "react-redux"
+import { bindActionCreators } from "redux"
 
-import TwitchTvContainer from "../TwitchTvContainer"
+import * as actions from "../../redux/TwitchUsers"
+
 import TwitchUserStatus from "../../components/TwitchUserStatus"
 import Container from "./Container"
 
@@ -41,5 +44,16 @@ class TwitchUserStatusList extends React.Component {
     }
 }
 
+function mapStateToProps(state) {
+    return {
+        data: state.twitchUsers.get("data"),
+        showOnlineUsers: state.twitchUsersStatusList.get("showOnlineUsers"),        
+        showOfflineUsers: state.twitchUsersStatusList.get("showOfflineUsers")
+    }
+}
 
-export default TwitchTvContainer(TwitchUserStatusList)
+function mapDispatchToProps(dispatch) {
+    return bindActionCreators({...actions}, dispatch)
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(TwitchUserStatusList)

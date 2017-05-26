@@ -5,7 +5,7 @@ import { connect } from "react-redux"
 import { Field, reduxForm, SubmissionError } from "redux-form/immutable"
 import { primary } from "../../theme/colors"
 
-import * as actions from "./actions"
+import * as actions from "../../redux/TwitchUsersStatusList"
 import styled from "styled-components"
 
 const Container = styled.div`
@@ -46,11 +46,12 @@ class Navbar extends React.Component {
 
 function mapStateToProps(state) {
     return {
-        data: state.twitchTv.get("data")
+        data: state.twitchUsers.get("data")
     }
 }
 
 function mapDispatchToProps(dispatch) {
+    console.log("actions:", actions)
     return bindActionCreators({...actions}, dispatch)
 }
 
