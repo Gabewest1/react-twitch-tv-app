@@ -17,14 +17,16 @@ class TwitchUserStatusList extends React.Component {
         if(data) {
             return data.map((user, key) => {
                 let currentUser = data.get(key).toJS()
+
                 if(!showOnlineUsers && currentUser.stream) {
                     return null
                 } else if(!showOfflineUsers && !currentUser.stream) {
                     return null
+                } else {
+                    return (
+                        <TwitchUserStatus {...currentUser} key={key} />
+                    )
                 }
-                return (
-                    <TwitchUserStatus {...currentUser} key={key} />
-                )
             })
         } else {
             return null
