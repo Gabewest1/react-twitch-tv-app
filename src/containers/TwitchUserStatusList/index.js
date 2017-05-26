@@ -13,11 +13,19 @@ class TwitchUserStatusList extends React.Component {
         })
     }
     createTwitchUserStatus() {
-        let { data } = this.props
+        let { data, showOnlineUsers, showOfflineUsers } = this.props
         if(data) {
-            return data.map((user, key) => (
-                <TwitchUserStatus {...data.get(key).toJS()} key={key} />
-            ))
+            return data.map((user, key) => {
+                let currentUser = data.get(key).toJS()
+                if(!showOnlineUsers && currentUser.stream) {
+                    return null
+                } else if(!showOfflineUsers && !currentUser.stream) {
+                    return null
+                }
+                return (
+                    <TwitchUserStatus {...currentUser} key={key} />
+                )
+            })
         } else {
             return null
         }
@@ -30,5 +38,6 @@ class TwitchUserStatusList extends React.Component {
         )
     }
 }
+
 
 export default TwitchTvContainer(TwitchUserStatusList)

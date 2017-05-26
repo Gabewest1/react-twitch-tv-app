@@ -25,8 +25,8 @@ class Navbar extends React.Component {
     render() {
         return (
             <Container>
-                <Button>Online</Button>
-                <Button>Offline</Button>
+                <Button onClick={this.props.handleOnlineButtonClick}>Online</Button>
+                <Button onClick={this.props.handleOfflineButtonClick}>Offline</Button>
                 <Field 
                     name="searchUser"
                     component="input"
@@ -55,5 +55,5 @@ function mapDispatchToProps(dispatch) {
 }
 
 export default reduxForm(
-
+    
 )(connect(mapStateToProps, mapDispatchToProps)(Navbar))
