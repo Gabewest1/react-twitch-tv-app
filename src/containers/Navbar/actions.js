@@ -1,22 +1,12 @@
 import {
-    SHOW_ONLINE_USERS,
-    HIDE_ONLINE_USERS,
-    SHOW_OFFLINE_USERS,
-    HIDE_OFFLINE_USERS,
-} from "../TwitchUserStatusList/constants"
+    ONLINE_BUTTON_CLICKED,
+    OFFLINE_BUTTON_CLICKED,
+} from "./constants"
 
-export function showOnlineUsers() {
-    return { type: SHOW_ONLINE_USERS }
+export function handleOnlineButtonClick() {
+    return { type: ONLINE_BUTTON_CLICKED }
 }
 
-export function hideOnlineUsers() {
-    return { type: HIDE_ONLINE_USERS }
-}
-
-export function showOfflineUsers() {
-    return { type: SHOW_OFFLINE_USERS }
-}
-
-export function hideOfflineUsers() {
-    return { type: HIDE_OFFLINE_USERS }
+export function handleOfflineButtonClick() {
+    return { type: OFFLINE_BUTTON_CLICKED }
 }

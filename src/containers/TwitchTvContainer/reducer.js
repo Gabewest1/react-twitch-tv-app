@@ -8,9 +8,18 @@ import {
     FETCH_USER_STREAM_DATA_ERROR
 } from "./constants"
 
+import {
+    SHOW_ONLINE_USERS,
+    HIDE_ONLINE_USERS,
+    SHOW_OFFLINE_USERS,
+    HIDE_OFFLINE_USERS,
+} from "../TwitchUserStatusList/constants"
+
 let initialState = fromJS({
     loading: false,
     data: [],
+    showOnlineUsers: true,
+    showOfflineUsers: true,
     error: false
 })
 
@@ -33,6 +42,14 @@ export default function twitchTv(state = initialState, action) {
                         ))
         case FETCH_USER_STREAM_DATA_ERROR:
             return state.set("loading", false).set("error", true)
+        case SHOW_ONLINE_USERS:
+            return state.set("showOnlineUsers", true)
+        case HIDE_ONLINE_USERS:
+            return state.set("showOnlineUsers", false)
+        case SHOW_OFFLINE_USERS:
+            return state.set("showOfflineUsers", true)
+        case HIDE_OFFLINE_USERS:
+            return state.set("showOfflineUsers", false)
         default:
             return state
     }
