@@ -8,23 +8,22 @@ let TwitchUserStatus = styled.div`
     background-size: 100% 100%;
     border: solid 2px ${secondary}
     color: ${complementary1};
-    font-size: 5vw;
     font-family: helvetica;
-    height: 300px;
-    width: 500px;
     margin: 0 auto;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     position: relative;
-
+    width: 250px;
 `
-let UserLogo = styled.div`
-    align-self: flex-start;  
+let UserLogo = styled.div`  
 
 `
 let Logo = styled.img`
     max-width: 100%;
+    border-radius: 50%;
+    width: 200px;
 `
 let UserInfo = styled.div`
     text-align: center;  
@@ -57,7 +56,7 @@ export default (props) => {
                     <Logo src={logo} alt={username + " logo"} />
                 </UserLogo>
                 <UserInfo>
-                    <h1>{username}</h1>
+                    <h3>{username}</h3>
                     <p>Currently offline</p>
                 </UserInfo>
             </TwitchUserStatus>

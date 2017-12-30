@@ -1,20 +1,19 @@
 import { fromJS, Map } from "immutable"
-import {
-    FETCH_USER_DATA,
-    FETCH_USER_DATA_SUCCESS,
-    FETCH_USER_DATA_ERROR,
-    FETCH_USER_STREAM_DATA,
-    FETCH_USER_STREAM_DATA_SUCCESS,
-    FETCH_USER_STREAM_DATA_ERROR
-} from "./constants"
+
+export const FETCH_USER_DATA = "FETCH_USER_DATA"
+export const FETCH_USER_DATA_SUCCESS = "FETCH_USER_DATA_SUCCESS"
+export const FETCH_USER_DATA_ERROR = "FETCH_USER_DATA_ERROR"
+export const FETCH_USER_STREAM_DATA = "FETCH_USER_STREAM_DATA"
+export const FETCH_USER_STREAM_DATA_SUCCESS = "FETCH_USER_STREAM_DATA_SUCCESS"
+export const FETCH_USER_STREAM_DATA_ERROR = "FETCH_USER_STREAM_DATA_ERROR"
 
 let initialState = fromJS({
-    loading: false,
     data: [],
+    loading: false,
     error: false
 })
 
-export default function twitchTv(state = initialState, action) {
+export default function twitchUsers(state = initialState, action) {
     switch(action.type) {
         case FETCH_USER_DATA:
             return state.set("loading", true).set("error", false)
@@ -33,11 +32,11 @@ export default function twitchTv(state = initialState, action) {
                         ))
         case FETCH_USER_STREAM_DATA_ERROR:
             return state.set("loading", false).set("error", true)
-        default:
+        default: 
             return state
     }
 }
 
-function updateUserData(data, action) {
-
+export function fetchUserData(username) {
+    return { type: FETCH_USER_DATA, username }
 }

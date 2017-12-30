@@ -1,7 +1,9 @@
-import twitchTv from "./containers/TwitchTvContainer/reducer"
+import twitchUsers from "./redux/TwitchUsers"
+import twitchUsersStatusList from "./redux/TwitchUsersStatusList"
 
 const rootReducer = {
-    twitchTv
+    twitchUsers,
+    twitchUsersStatusList
 }
 
 export default rootReducer
